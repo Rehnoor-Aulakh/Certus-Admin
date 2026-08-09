@@ -1,12 +1,9 @@
-import { useNavigate } from "react-router";
 import useUser from "../features/authentication/useUser";
 import Logo from "../ui/Logo";
 import styled from "styled-components";
 import Heading from "../ui/Heading";
 import GoogleLoginButton from "../ui/GoogleLoginButton";
 import Footer from "../ui/Footer";
-import { useState } from "react";
-import SpinnerMini from "../ui/SpinnerMini";
 import Spinner from "../ui/Spinner";
 import { Navigate } from "react-router";
 const LoginLayout = styled.main`

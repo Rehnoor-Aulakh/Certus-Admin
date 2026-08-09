@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledLogo = styled.div`
   text-align: center;
-  width: min(24rem, 72vw);
+  width: ${({ $size }) => $size};
 `;
 
 const Image = styled.img`
@@ -12,10 +12,10 @@ const Image = styled.img`
   height: auto;
 `;
 
-export default function Logo({ className }) {
+export default function Logo({ size = "min(24rem,72vw)", imageStyle }) {
   return (
-    <StyledLogo className={className}>
-      <Image src="logo.svg" alt="Logo" />
+    <StyledLogo $size={size}>
+      <Image src="logo.svg" alt="Logo" className={imageStyle} />
     </StyledLogo>
   );
 }

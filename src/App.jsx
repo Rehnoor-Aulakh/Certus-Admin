@@ -6,6 +6,10 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Login from "./pages/Login";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import AppLayout from "./ui/AppLayout";
+import Patients from "./pages/Patients";
+import Dashboard from "./pages/Dashboard";
+import Packages from "./pages/Packages";
+import Reports from "./pages/Reports";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,7 +33,10 @@ export default function App() {
             }
           >
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<div>Dashboard</div>} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/patients" element={<Patients />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/packages" element={<Packages />} />
           </Route>
           <Route path="/login" element={<Login />} />
         </Routes>
