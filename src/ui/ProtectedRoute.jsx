@@ -1,5 +1,4 @@
-import React from "react";
-import { Navigate, useNavigate } from "react-router";
+import { Navigate } from "react-router";
 import styled from "styled-components";
 import Spinner from "../ui/Spinner";
 import useUser from "../features/authentication/useUser";
@@ -12,8 +11,6 @@ const FullPage = styled.div`
 `;
 
 export default function ProtectedRoute({ children }) {
-  const navigate = useNavigate();
-
   // 1. Load the authenticated user
   const { isLoading, isAuthenticated } = useUser();
 

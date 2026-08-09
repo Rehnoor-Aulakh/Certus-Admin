@@ -11,6 +11,10 @@ const GlobalStyles = createGlobalStyle`
   --color-brand-700: #4338ca;
   --color-brand-800: #3730a3;
   --color-brand-900: #312e81;
+  
+  --color-certus-blue: #1b2c48;
+  --color-certus-red: #ff1f1f;
+  --color-certus-white: #f2f2f2;
 
   /* Grey */
   --color-grey-0: #fff;

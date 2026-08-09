@@ -1,9 +1,12 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import React from "react";
 import { BrowserRouter as Router, Routes, Navigate, Route } from "react-router";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import GlobalStyles from "./styles/GlobalStyles";
+import Login from "./pages/Login";
+import ProtectedRoute from "./ui/ProtectedRoute";
+import AppLayout from "./ui/AppLayout";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -17,7 +20,19 @@ export default function App() {
       <ReactQueryDevtools initialIsOpen={false} />
       <GlobalStyles />
       <Router>
-        
+        <Routes>
+          <Route
+            element={
+              <ProtectedRoute>
+                <AppLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/dashboard" element={<div>Dashboard</div>} />
+          </Route>
+          <Route path="/login" element={<Login />} />
+        </Routes>
       </Router>
       <Toaster
         position="top-center"
